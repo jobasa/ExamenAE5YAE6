@@ -30,6 +30,16 @@ namespace Proyecto_AcessoADatos.Controllers
             return d;
         }
 
+        /**Ejercicio 1*/
+        // GET: api/mercado/5
+        public Mercado GetID(int id)
+        {
+            var repo = new MercadoRepository();
+            Mercado d = repo.RetrieveID(id);
+            return d;
+        }
+        /** FIN Ejercicio 1*/
+
         // POST: api/mercado
         public void Post([FromBody]Mercado merc)
         {

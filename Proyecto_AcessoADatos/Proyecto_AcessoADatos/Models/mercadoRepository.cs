@@ -49,6 +49,23 @@ namespace Proyecto_AcessoADatos.Models
             return m;*/
         }
 
+
+        /** Ejercicio 1*/
+        internal Mercado RetrieveID(int id)
+        {
+            List<Mercado> mercado = new List<Mercado>();
+            using (PlaceMyBetContext context = new PlaceMyBetContext())
+            {
+                mercado = context.Mercados
+                    .Select(p => p.apuestas)
+                    .Where(m => m.id == id)
+                    .ToList();
+            }
+            return mercado;
+
+        }
+        /** FIN Ejercicio 1*/
+
         internal Mercado Retrieve(int id)
         {
             Mercado mercado;
